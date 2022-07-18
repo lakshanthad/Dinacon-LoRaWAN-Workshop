@@ -7,6 +7,8 @@ SensirionI2CSht4x sht4x;
 TFT_eSPI tft; 
 TFT_eSprite spr = TFT_eSprite(&tft);
 
+float temperature, humidity;
+
 void setup(void) {
   Wire.begin();
   sht4x.begin(Wire);
@@ -16,7 +18,6 @@ void setup(void) {
 }
 
 void loop() {
-  float temperature, humidity;
   sht4x.measureHighPrecision(temperature, humidity);
 
   //Setting the title header 
