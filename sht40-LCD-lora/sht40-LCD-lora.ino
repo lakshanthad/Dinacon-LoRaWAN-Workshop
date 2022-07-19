@@ -139,7 +139,7 @@ void loop() {
      else{
       char cmd[128];
       sprintf(cmd, "AT+CMSGHEX=\"%08X %08X\"\r\n", int_temp, int_humi);
-      ret = at_send_check_response("oe", 10000, cmd);
+      ret = at_send_check_response("Done", 10000, cmd);
       if (ret){      
         Serial.print("Temperature:");
         Serial.print(temperature);
